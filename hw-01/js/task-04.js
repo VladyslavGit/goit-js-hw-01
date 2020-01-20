@@ -2,13 +2,17 @@
 
 //task4
 
-const credits = 23580;
+let credits = 23580;
 const pricePerDroid = 3000;
 let totalPrice;
-const order = prompt('Какое количество Вы желаете купить?');
-if (order === null) {
+let order = prompt('Какое количество Вы желаете купить?');
+order = Number(order);
+totalPrice = pricePerDroid * order;
+if (order === 0) {
     console.log('Отменено пользователем');
-} else totalPrice = (credits - pricePerDroid * order);
-if (totalPrice > credits) {
+} else if (totalPrice > credits){
     console.log('Недостаточно средств на счету!');
-} else console.log(`Вы купили ${order} дроидов, на счету осталось ${totalPrice} кредитов.`);
+} else {
+    credits = credits - totalPrice;
+    console.log(`Вы купили ${order} дроидов, на счету осталось ${credits} кредитов.`);
+}
