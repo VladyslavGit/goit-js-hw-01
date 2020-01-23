@@ -14,6 +14,7 @@ function doAll(inArray) {
   }
   return resArray;
 }
+
 function mySort(inArray) {
   //**################################################# */
   let isSorted;
@@ -34,6 +35,7 @@ function mySort(inArray) {
   //**################################################# */
   return resArray;
 }
+
 function uni(inArray) {
   //**################################################# */
   const resArray = [];
@@ -50,3 +52,36 @@ console.log("mySort", mySort(nonSorted)); // 1,2,3,4,5,8,9,10
 console.log("doAll", doAll(nonSorted)); // 1,2,3,4,5,8,9,10
 console.log(uni(nonSorted));
 console.log(uni(mySort(nonSorted))); // 1,2,3,4,5,8,9,10
+
+///////////////////////////////////////////
+
+const ALL_BIG_LETTERS = "QWERTYUIOPASDFGHJKLMNBVCXZ";
+const logins = ["Mango", "RobotGoogles", "Poly", "Aj4x1sBozz", "Qwerty123"];
+const isLoginValid = login =>
+  login[0] === login[0].toUpperCase() &&
+  login.length >= 4 &&
+  login.length <= 16 &&
+  Number.isNaN(Number(login[0]));
+const isLoginUnique = (allLogins, login) => !allLogins.includes(login);
+let pupitr;
+const addLogin = (allLogins, login) => {
+  if (login === null) {
+    return "Отменено пользователем!";
+  } else if (!isLoginValid(login)) {
+    return "Не соблюдены условия ввода логина!";
+  } else if (!isLoginUnique(allLogins, login)) {
+    return "Логин с таким именем уже существует!";
+  } else {
+    allLogins.push(login);
+    return "Новый логин создан!";
+  }
+};
+console.log(logins);
+do {
+  pupitr = prompt("Э, введи логин!");
+  console.log(addLogin(logins, pupitr));
+} while (pupitr !== null);
+console.log(logins);
+
+///////////////////////
+

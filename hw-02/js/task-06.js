@@ -1,16 +1,22 @@
 'use strict';
+let input;
+const numbers = [];
 
-// task6
+const sum = function (array) {
+    let total = 0;
+    for (let elem of array) {
+        total += elem;
+    }
+    return total;
+}
 
-let total = 0;
-let input = prompt('Введите число: ');
 while (input !== null) {
+    input = prompt('Введите число: ');
     if (Number.isNaN(Number(input))) {
         alert('Было введено не число, попробуйте еще раз');
-        input = prompt('Введите число: ');
     } else {
-        total = total + Number(input);
-        input = prompt('Введите число: ')
-    };
-};
-alert(`Общая сумма чисел равна: ${total}`);
+        numbers.push(Number(input));
+    }
+}
+
+console.log(`Общая сумма равна: ${sum(numbers)}`);

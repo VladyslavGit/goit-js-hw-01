@@ -1,18 +1,22 @@
 'use strict';
+const formatString = function (string) {
+    if (string.length <= 40) return string;
+    string = string.slice(0, 40);
+    return string + "...";
+};
 
-//task4
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
 
-let credits = 23580;
-const pricePerDroid = 3000;
-let totalPrice;
-let order = prompt('Какое количество Вы желаете купить?');
-order = Number(order);
-totalPrice = pricePerDroid * order;
-if (order === 0) {
-    console.log('Отменено пользователем');
-} else if (totalPrice > credits){
-    console.log('Недостаточно средств на счету!');
-} else {
-    credits = credits - totalPrice;
-    console.log(`Вы купили ${order} дроидов, на счету осталось ${credits} кредитов.`);
-}
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
+
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
+
+console.log(
+    formatString(
+        'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+    ),
+);
+// вернется форматированная строка
