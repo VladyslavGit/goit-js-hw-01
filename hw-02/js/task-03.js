@@ -8,7 +8,7 @@ function findLongestWord(string) {
             longestWord = words[i];
         }
     }
-    return (`longestWord: ${longestWord}`);
+    return (longestWord);
 }
 
 console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'

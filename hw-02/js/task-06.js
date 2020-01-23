@@ -12,7 +12,9 @@ const sum = function (array) {
 
 while (input !== null) {
     input = prompt('Введите число: ');
-    if (Number.isNaN(Number(input))) {
+    if (Number.isNaN(
+        
+    ) {
         alert('Было введено не число, попробуйте еще раз');
     } else {
         numbers.push(Number(input));
