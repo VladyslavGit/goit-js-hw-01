@@ -22,10 +22,11 @@ const products = [{
 ];
 
 function getAllPropValues(arr, prop) {
+    //debugger;
     const result = [];
-    for (const key in arr) {
-        if (Object.keys(products[key]).includes(prop)) {
-            result.push(arr[key][prop]);
+    for (const key in arr) {      //{name: "Радар", price: 1300, quantity: 4}..{name: "Захват", price: 1200, quantity: 2}
+        if (Object.keys(products[key]).includes(prop)) { //["name", "price", "quantity"].includes(prop)
+            result.push(arr[key][prop]); //1st iteration - console.log(products[key]["name"]);=>Радар
         }
     }
     return result;
@@ -33,6 +34,6 @@ function getAllPropValues(arr, prop) {
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
-console.table(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
-console.table(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
-console.table(getAllPropValues(products, "category")); // []
+console.log(getAllPropValues(products, "name")); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+console.log(getAllPropValues(products, "quantity")); // [4, 3, 7, 2]
+console.log(getAllPropValues(products, "category")); // []
