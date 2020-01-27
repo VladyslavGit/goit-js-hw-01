@@ -25,7 +25,7 @@ function getAllPropValues(arr, prop) {
     //debugger;
     const result = [];
     for (const key in arr) {      //{name: "Радар", price: 1300, quantity: 4}..{name: "Захват", price: 1200, quantity: 2}
-        if (Object.keys(products[key]).includes(prop)) { //["name", "price", "quantity"].includes(prop)
+        if (Object.keys(arr[key]).includes(prop)) { //["name", "price", "quantity"].includes(prop)
             result.push(arr[key][prop]); //1st iteration - console.log(products[key]["name"]);=>Радар
         }
     }
