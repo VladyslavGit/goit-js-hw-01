@@ -10,5 +10,5 @@ user.hobby = 'skydiving';
 user.premium = 'false';
 const keys = Object.keys(user);
 for (const key of keys) {
-  console.log('Key: ', key);
+  console.log(`${key}: ${user[key]}`);
 }
