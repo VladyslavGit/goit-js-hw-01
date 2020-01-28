@@ -110,3 +110,43 @@ const hotel = {
 for (const key in hotel) {
   console.log(`${key}: ${hotel[key]}`)
 }
+
+/////////////////////////////////////////////////////////////
+const filter = function (array, testCallback) {
+  result = [];
+  for (const el of array) {
+    const passed = testCallback(el);
+
+    if (passed) {
+      result.push(el);
+    }
+  }
+  return result;
+}
+
+console.log(
+  filter([1, 2, 3, 4, 5], function (el) {
+    return el >= 4;
+  }),
+);
+
+console.log(
+  filter([-71, 2, 200, 4, 15], function (number) {
+    return number >= 10;
+  }),
+);
+
+console.log(
+  filter(['Franchesko', 'Greg', 'Frank Colombo', 'Bob'], function (word) {
+    return word.length >= 10;
+  }),
+);
+
+//встроенная функция fiter
+console.log(
+  [1, 50, 376, 4, 5].filter(function(number) {
+    return number >= 50;
+  }),
+);
+
+////////////////////////////////////////////////////////////////////////////
