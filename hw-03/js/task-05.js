@@ -26,7 +26,7 @@ function getAllPropValues(arr, prop) {
   const result = [];
   for (const key of arr) {
     let property = key[prop];
-    if (property !== undefined) {
+    if (property) {
         result.push(property);
     }
   }
