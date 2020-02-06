@@ -1,6 +1,5 @@
 "use strict";
 const titleLi = document.querySelectorAll(".item");
-console.log(titleLi.textContent);
 console.log(`В списке ${titleLi.length} категории`);
 titleLi.forEach(item => {
   console.log(
