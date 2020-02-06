@@ -7,13 +7,13 @@ const counterDecrement = function() {
   clickCount -= 1;
   return (counterValue.textContent = clickCount);
 };
-decrementBtn.addEventListener("click", (e) => {
-  counterDecrement();
+decrementBtn.addEventListener("click", (event) => {
+  counterDecrement(event);
 });
 const counterIncrement = function() {
   clickCount += 1;
   return (counterValue.textContent = clickCount);
 };
-incrementBtn.addEventListener("click", (e) => {
-  counterIncrement();
+incrementBtn.addEventListener("click", (event) => {
+  counterIncrement(event);
 });
